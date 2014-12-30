@@ -13,7 +13,7 @@ namespace NMCNPM
     public partial class frmLogin : Form
     {
         public static SchoolManagementDataContext _database;
-        String _strConnectionString = "Data Source=MON;Initial Catalog=QLDIEMNEW;Integrated Security=True";
+        String _strConnectionString = "Data Source=CHARLESNGUYEN;Initial Catalog=QLDIEMNEW;Integrated Security=True";
 
         public frmLogin()
         {
@@ -51,13 +51,13 @@ namespace NMCNPM
                         {
                             if (txtUser.Text.Substring(0,2)=="GV")
                             {
-                                frmTeacher _frmTeacher = new frmTeacher();
+                                frmTeacher _frmTeacher = new frmTeacher(txtUser.Text);
                                 _frmTeacher.OnFormCloseEventArg += new frmTeacher.FormCloseHandler(ShowHiddenForm);
                                 _frmTeacher.Show();
                             }
                             else
                             {
-                                frmStudent _frmStudent = new frmStudent();
+                                frmStudent _frmStudent = new frmStudent(txtUser.Text);
                                 _frmStudent.OnFormCloseEventArg += new frmStudent.FormCloseHandler(ShowHiddenForm);
                                 _frmStudent.Show();
                             }
